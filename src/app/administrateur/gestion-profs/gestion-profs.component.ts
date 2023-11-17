@@ -149,8 +149,8 @@ export class GestionProfsComponent {
       icon: "warning",
       showCancelButton: true,
       cancelButtonText: `Annuler`,
-      confirmButtonColor: "#4aa3a2",
-      cancelButtonColor: "#F9968B",
+      confirmButtonColor: "#0000FF",
+      cancelButtonColor: "red",
       confirmButtonText: "Oui, supprimer!"
     }).then((result) => {
       if (result.isConfirmed) {
@@ -166,13 +166,13 @@ export class GestionProfsComponent {
     // Désactiver un formateur
   activer(paramFormateur: any){
     Swal.fire({
-      title: "Voulez vous vraiment supprimer ce formateur?",
+      title: "Voulez vous vraiment activer ce formateur?",
       icon: "warning",
       showCancelButton: true,
       cancelButtonText: `Annuler`,
-      confirmButtonColor: "#4aa3a2",
-      cancelButtonColor: "#F9968B",
-      confirmButtonText: "Oui, supprimer!"
+      confirmButtonColor: "#0000FF",
+      cancelButtonColor: "red",
+      confirmButtonText: "Oui, activer!"
     }).then((result) => {
       if (result.isConfirmed) {
         paramFormateur.etatFormateur=1;
