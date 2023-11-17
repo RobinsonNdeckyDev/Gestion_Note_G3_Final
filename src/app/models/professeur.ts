@@ -4,7 +4,7 @@ export class Professeurs {
   prenomProfesseur: string = '';
   emailProfesseur: string = '';
   passwordProfesseur: string = '';
-  isActive: boolean = true;
+  etatFormateur: number = 0;
   Matieres: any = [];
   role: string = '';
 }
