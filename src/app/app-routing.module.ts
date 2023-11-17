@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'connexion', component: LoginComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'formateur', component: ProfsComponent},
-  { path: 'etudiant', component: EtudiantsComponent},
+  { path: 'etudiant/:id', component: EtudiantsComponent},
 ];
 
 
