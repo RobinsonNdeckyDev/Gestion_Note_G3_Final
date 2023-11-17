@@ -82,8 +82,10 @@ export class LoginComponent {
       this.userApprenantFound = this.dbApprenants.find((element: any) => element.emailApprenant == this.emailLogin && element.passwordApprenant == this.passwordLogin && element.etatApprenant==1);
       if (this.userApprenantFound) {
         // Le compte existe 
+        alert(this.userApprenantFound.idApprenant)
+        console.error(this.userApprenantFound.idApprenant)
         this.alertMessage("success", "Bravo", "Vous etes connecté avec succés", timer);
-        this.route.navigate(['etudiant']);
+        this.route.navigate(['etudiant', this.userApprenantFound.idApprenant]);
       }
       else {
         this.alertMessage("error","Oups!", "Le compte n'exite pas ou est désactiver",timer);
