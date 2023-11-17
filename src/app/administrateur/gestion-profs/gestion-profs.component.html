@@ -59,10 +59,23 @@
                             <h6 class="text-center">Actions</h6>
                         </div>
                     </div>
-                    <ng-container *ngFor="let prof of tabFormateur">
-                        <div class="row p-2" *ngIf="prof.etatFormateur==1">
-                            <div class="col-md-3">
-                                <img [src]=" prof.urlProfilF " alt="" style="width: 40px;">
+                    <div class=" scroll-container">
+                        <ng-container *ngFor="let prof of tabFormateur">
+                            <div class="row p-2" *ngIf="prof.etatFormateur==1">
+                                <div class="col-md-3">
+                                    <img [src]=" prof.urlProfilF " alt="" style="width: 40px;">
+                                </div>
+                                <div class="col-md-3">
+                                    <p> {{prof.prenomF}} </p>
+                                </div>
+                                <div class="col-md-3">
+                                    {{prof.nomF}}
+                                </div>
+                                <div class="col-md-3 d-flex justify-content-between">
+                                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#detailFormateur"
+                                        (click)="detailFormt(prof.idFormateur)">Détails</button>
+                                    <button class="btn btn-danger" (click)="supprimer(prof)">Désactiver</button>
+                                </div>
                             </div>
                             <div class="col-md-3">
                                 <p> {{prof.prenomF}} </p>
@@ -77,6 +90,8 @@
                             </div>
                         </div>
                     </ng-container>
+                      
+                    </div>
                 </div>
             </div>
 
@@ -99,22 +114,24 @@
                             <h6 class="text-center">Actions</h6>
                         </div>
                     </div>
-                    <ng-container *ngFor="let prof of tabFormateur">
-                        <div class="row p-2" *ngIf="prof.etatFormateur==0">
-                            <div class="col-md-3">
-                                <img [src]=" prof.urlProfilF " alt="" style="width: 40px;">
+                    <div class=" scroll-container">
+                        <ng-container *ngFor="let prof of tabFormateur">
+                            <div class="row p-2" *ngIf="prof.etatFormateur==0">
+                                <div class="col-md-3">
+                                    <img [src]=" prof.urlProfilF " alt="" style="width: 40px;">
+                                </div>
+                                <div class="col-md-3">
+                                    <p> {{prof.prenomF}} </p>
+                                </div>
+                                <div class="col-md-3">
+                                    {{prof.nomF}}
+                                </div>
+                                <div class="col-md-3 d-flex justify-content-center">
+                                    <button class="btn btn-success" (click)="activer(prof)">Activer</button>
+                                </div>
                             </div>
-                            <div class="col-md-3">
-                                <p> {{prof.prenomF}} </p>
-                            </div>
-                            <div class="col-md-3">
-                                {{prof.nomF}}
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <button class="btn btn-success" (click)="activer(prof)">Activer</button>
-                            </div>
-                        </div>
-                    </ng-container>
+                        </ng-container>
+                    </div>
                 </div>
             </div>
         </div>
