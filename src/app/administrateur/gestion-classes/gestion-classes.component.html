@@ -41,64 +41,12 @@
                                 {{class.nom}}
                         </div>
                         <div class="col-md-6 d-flex justify-content-center">
-                            <button class="btn btn-info text-light" data-bs-toggle="modal"
-                                data-bs-target="#detailMatiere">Détails</button>
+                            <button class="btn btn-info text-light" data-bs-toggle="modal" data-bs-target="#detailMatiere"
+                                (click)="chargerInfosClasse(class)">Modifier</button>
                         </div>
                     </div>
-
-                    <!-- <div class="row p-2">
-                        <div class="col-md-3">
-                            <img src="" alt="">
-                        </div>
-                        <div class="col-md-3">
-                            <p>André</p>
-                        </div>
-                        <div class="col-md-3">
-                            Ndione
-                        </div>
-                        <div class="col-md-3 d-flex justify-content-between">
-                            <button class="btn btn-info">Détails</button>
-                            <button class="btn btn-danger">Désactiver</button>
-                        </div>
-                    </div>
-
-                    <div class="row p-2">
-                        <div class="col-md-3">
-                            <img src="" alt="">
-                        </div>
-                        <div class="col-md-3">
-                            <p>André</p>
-                        </div>
-                        <div class="col-md-3">
-                            Ndione
-                        </div>
-                        <div class="col-md-3 d-flex justify-content-between">
-                            <button class="btn btn-info">Détails</button>
-                            <button class="btn btn-danger">Désactiver</button>
-                        </div>
-                    </div>
-
-                    <div class="row p-2">
-                        <div class="col-md-3">
-                            <img src="" alt="">
-                        </div>
-                        <div class="col-md-3">
-                            <p>André</p>
-                        </div>
-                        <div class="col-md-3">
-                            Ndione
-                        </div>
-                        <div class="col-md-3 d-flex justify-content-between">
-                            <button class="btn btn-info">Détails</button>
-                            <button class="btn btn-danger">Désactiver</button>
-                        </div>
-                    </div> -->
                 </div>
             </div>
-
-            <!-- <div class="formateursOff" id="formateursOff" *ngIf="currentContent === 'formateursOff'">
-                <p>Formateurs désactivés</p>
-            </div> -->
         </div>
     </div>
 </div>
@@ -115,51 +63,19 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-12 col-md-3">
-                        <img class="img-fluid"
-                            src="https://img.freepik.com/free-vector/programmers-using-javascript-programming-language-computer-tiny-people-javascript-language-javascript-engine-js-web-development-concept-bright-vibrant-violet-isolated-illustration_335657-986.jpg?size=626&ext=jpg&uid=R66646754&ga=GA1.1.1567362029.1692611823&semt=sph"
-                            alt="">
+                <form action="">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="mb-3">
+                                <label for="nomClasse" class="form-label">Nom de la classe: </label>
+                                <input type="text" class="form-control" id="nomClasse" name="nomClasse" [(ngModel)]="nom">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-9 p-2">
-                        <h4>Nom classe</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Excepturi possimus iusto nisi magni facilis reiciendis tempore placeat perferendis,
-                            quo voluptas laborum dolore ea sit! Sed reprehenderit earum tenetur doloremque temporibus?
-                        </p>
-                    </div>
-                </div>
-
-                <!-- <div class="row mt-2">
-                    <div class="col-12 col-md-4">
-                        <span class="titleForm">Classe monitoré</span>
-                        <p>Sixiéme secondaire</p>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <span class="titleForm">Matiéres dispensées</span>
-                        <ul>
-                            <li>_ Anglais</li>
-                            <li>_ français</li>
-                            <li>_ Maths</li>
-                            <li>_ Histoire</li>
-                            <li>_ Geographie</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <span class="titleForm">Evaluations</span>
-                        <ul>
-                            <li><a href="#">_ Evaluation Anglais</a></li>
-                            <li><a href="#">_ Evaluation français</a></li>
-                            <li><a href="#">_ Evaluation Maths</a></li>
-                            <li><a href="#">_ Evaluation Histoire</a></li>
-                            <li><a href="#">_ Evaluation Geographie</a></li>
-                        </ul>
-                    </div>
-                </div> -->
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="modierClasse()">Modifier</button>
             </div>
         </div>
     </div>
