@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-header.component.css']
 })
 export class UserHeaderComponent {
+  imageUrl:String="assets/logo.png";
+
 
 }
