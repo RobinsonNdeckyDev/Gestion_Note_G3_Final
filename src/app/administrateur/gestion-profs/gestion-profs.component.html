@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 col-md-2 p-0">
             <div class="d-flex sidebar flex-column flex-shrink-0 p-2 text-bg-dark">
-                <a class="text-center fw-bold fs-4  text-white text-decoration-none">
+                <a class="text-center fw-bold fs-6  text-white text-decoration-none">
                     Tableau de bord
                 </a>
                 <hr>
@@ -46,16 +46,16 @@
                     data-bs-target="#ajoutFormateur">Ajouter un formateur</button>
                 <div class="container mt-3 border">
                     <div class="row titleTab bg-light">
-                        <div class="col-md-3">
+                        <div class="col">
                             <p>Profil</p>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col">
                             <p>Pénom Formateur</p>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col">
                             Nom Formateur
                         </div>
-                        <div class="col-md-3">
+                        <div class="col">
                             <h6 class="text-center">Actions</h6>
                         </div>
                     </div>
@@ -72,12 +72,12 @@
                                     {{prof.nomF}}
                                 </div>
                                 <div class="col-md-3 d-flex justify-content-between">
-                                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#detailFormateur"
+                                    <button class="btn fond-bleu text-light fw-bold" data-bs-toggle="modal" data-bs-target="#detailFormateur"
                                         (click)="detailFormt(prof.idFormateur)">Détails</button>
                                     <button class="btn btn-danger" (click)="supprimer(prof)">Désactiver</button>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <!-- <div class="col-md-3">
                                 <p> {{prof.prenomF}} </p>
                             </div>
                             <div class="col-md-3">
@@ -87,7 +87,7 @@
                                 <button class="btn fond-bleu text-light fw-bold" data-bs-toggle="modal" data-bs-target="#detailFormateur"
                                     (click)="detailFormt(prof.idFormateur)">Détails</button>
                                 <button class="btn btn-danger" (click)="supprimer(prof)">Désactiver</button>
-                            </div>
+                            </div> -->
                         </ng-container>
                     </div>
                       
