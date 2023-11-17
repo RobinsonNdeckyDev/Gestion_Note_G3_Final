@@ -13,6 +13,7 @@ export class GestionClassesComponent {
   boutonActif = 1;
 
   currentContent: string = 'listeFormateurs'; // Initialiser le contenu actuel
+  nom: string = '';
 
   showContent(contentId: string): void {
     this.currentContent = contentId; // Mettre à jour le contenu actuel
@@ -86,6 +87,20 @@ export class GestionClassesComponent {
         this.nomClasse = '';
       }
     }
+  }
+
+  // variable qui stock le Classe selectionner
+  currentClasse: any;
+  // Methode pour charger les infos du classe à modifier
+  chargerInfosClasse(paramClasse: any) {
+    this.currentClasse = paramClasse;
+    this.nom = paramClasse.nom;
+    console.log(this.currentClasse.nom);
+  }
+
+  modierClasse() {
+    this.currentClasse.nom = this.nom;
+    alert(this.currentClasse.nom);
   }
 
   
