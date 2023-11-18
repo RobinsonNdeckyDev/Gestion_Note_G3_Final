@@ -1,12 +1,13 @@
 <app-user-header></app-user-header>
 <!-- Bouton pour ouvrir le modal -->
-<button class="btn btn-primary my-5" (click)="openModal(yourModalContent)">Enregistrer une évaluation</button>
+<div class="container mt-5">
+<button class="btn my-5 py-2 fw-bold " (click)="openModal(yourModalContent)" style="background-color: #D9b; color: white;">Enregistrer une évaluation</button>
 
 <!-- Modal -->
 <ng-template #yourModalContent let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Enregistrement d'évaluation</h4>
-    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+    <button type="button" class="close btn btn-outline-danger" aria-label="Close" (click)="closeModal()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -38,13 +39,13 @@
         <input type="text" id="subject" name="subject" class="form-control" [(ngModel)]="evaluationFormModel.subject" required>
       </div>
 
-      <button type="submit" class="btn btn-primary">Enregistrer l'évaluation</button>
+      <button type="submit" class="btn btn-success">Enregistrer l'évaluation</button>
     </form>
   </div>
 </ng-template>
 
-
-<table>
+<div class="tablef" >
+<table style="width: 180vh;">
   <tr>
     <th>Semestre</th>
     <th>Date</th>
@@ -61,12 +62,15 @@
     <td>{{ evaluation.status }}</td>
     <td>{{ evaluation.subject }}</td>
     <td>
-      <input type="number" [(ngModel)]="evaluation.grade" />
-      <button (click)="assignGrade(i, evaluation.grade)">Attribuer une note</button>
+      <input class="me-5" type="number" [(ngModel)]="evaluation.grade" />
+      <button class="btn btn-outline-secondary me-0" (click)="assignGrade(i, evaluation.grade)">✅
+      </button>
     </td>
     <td>
-      <button (click)="deleteEvaluation(i)">Supprimer</button>
+      <button class="btn btn-outline-danger" (click)="deleteEvaluation(i)">❌</button>
     </td>
   </tr>
 </table>
+</div>
+</div>
 <app-user-footer></app-user-footer>
