@@ -4,7 +4,7 @@ th, td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
-  color:white;
+  /* color:white; */
 }
 
 th {
