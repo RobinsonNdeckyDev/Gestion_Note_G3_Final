@@ -4,6 +4,10 @@ main{
 #titre{
     background-color:  rgb(244, 240, 240);
 }
+table{
+    width: 292%;
+    border: 1px solid #000;
+}
 /* .matier{
     background-color: rgb(227, 152, 145);
     padding: 10px;
