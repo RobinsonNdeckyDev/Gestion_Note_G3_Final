@@ -17,14 +17,12 @@ throw new Error('Method not implemented.');
 }
   evaluations: Evaluations[] = [];
   nouvelleEvaluation: Evaluations = {
-    id:0,
     semestre: '',
     date: new Date(),
     type: '',
     anneeScolaire: '',
     etat: '',
     matiere: '',
-
   };
   imageUrl:String="assets/logo.png";
 
@@ -49,6 +47,7 @@ throw new Error('Method not implemented.');
     //   etat: '',
     //   matiere: '',
     // };
+   this.nouvelleEvaluation.id= Math.floor(Math.random()*100) + Math.floor(Math.random()*10) ;
     this.evaluations.push(this.nouvelleEvaluation);
     localStorage.setItem("evaluations",JSON.stringify(this.evaluations));
   }
@@ -80,6 +79,7 @@ throw new Error('Method not implemented.');
       if (result.isConfirmed) {
           // Si l'utilisateur confirme la suppression
           this.evaluations = this.evaluations.filter((evaluation) => evaluation.id !== id);
+          localStorage.setItem('evaluations', JSON.stringify(this.evaluations));
           // Ensuite, vous pouvez appeler votre service pour supprimer également côté backend
         //   this.profService.supprimerEvaluation(id);
           // Afficher un message de confirmation
