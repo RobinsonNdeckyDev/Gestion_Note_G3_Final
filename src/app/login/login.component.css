@@ -1,5 +1,5 @@
 .trait{
-    border: 1px solid #052659;
+    border: 1px solid #DD99BB;
     width: 40%;
     margin: 0 auto;
     margin-bottom: 5%;
@@ -8,6 +8,11 @@
 .formulaireContainer{
     width: 30%;
     margin: 5% auto !important;
-    background-color: #3A8EEA;
+    background-color: #F2D4CC;
     color: #FFF;
+}
+
+.btnLogin{
+    background-color: #DD99BB;
+    border: none;
 }

@@ -21,44 +21,34 @@
         <div class="col-12 col-md-10 border">
             <div class="listeFormateurs p-2" id="listeFormateurs" *ngIf="currentContent === 'listeFormateurs'">
 
-                <h4 class="text-center fw-bold">Liste des classes</h4>
+                <h4 class="text-center fw-bold titre">Liste des classes</h4>
                 <div class="trait"></div>
                 <div class="trait"></div>
-                <button class="btn btn-dark text-light mt-2 mb-2" data-bs-toggle="modal"
+                <button class="btn btn-white  active mt-2 mb-2 btnAjt" data-bs-toggle="modal"
                     data-bs-target="#ajoutFormateur">Ajouter une classe
                 </button>
 
-                <div class="main-content mt-3">
-                    <div class="container mt-7">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card shadow">
-                                    <div class="table-responsive overflow-y-scroll" style="height: 35vh;">
-                                        <table class="table align-items-center table-flush">
-                                            <thead class="sticky-top">
-                                                <tr>
-                                                    <th scope="col">Nom classe</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr  *ngFor="let class of tabClasses">
-                                                    <td>
-                                                        {{class.nom}}
-                                                    </td>
-                                                    <td>
-                                                    <button class="btn btn-info text-light" data-bs-toggle="modal" data-bs-target="#detailMatiere"
-                                                        (click)="chargerInfosClasse(class)">Modifier</button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
+                <div class="table-responsive overflow-y-scroll mt-2" style="height: 55vh;">
+                    <table class="table align-items-center  p-2">
+                        <thead class="sticky-top fond-bleu">
+                            <tr class="">
+                                <th scope="col" class="fond-bleu text-white">Nom classe</th>
+                                <th scope="col" class="fond-bleu text-white">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let class of tabClasses">
+                                <td>
+                                    {{class.nom}}
+                                </td>
+                                <td>
+                                    <button class="btn fond-bleu text-light fw-bold" data-bs-toggle="modal" data-bs-target="#detailMatiere"
+                                        (click)="chargerInfosClasse(class)">Modifier</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -71,7 +61,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 fw-bold">Ajouter une classe</h1>
+                <h1 class="modal-title fs-5 fw-bold titre">Ajouter une classe</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -88,7 +78,7 @@
 
                     <!-- Envoi du formulaire -->
                     <div class="d-flex justify-content-end">
-                        <button class="btn btn-dark text-light" (click)="ajoutClassesValider()">Ajouter</button>
+                        <button class="btn save" (click)="ajoutClassesValider()">Ajouter</button>
                     </div>
                 </form>
             </div>
@@ -105,7 +95,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 fw-bold">Modification Classe</h1>
+                <h1 class="modal-title fs-5 fw-bold titre">Modification Classe</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -121,7 +111,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="modierClasse()">Modifier</button>
+                <button type="button" class="btn close" data-bs-dismiss="modal" (click)="modierClasse()">Modifier</button>
             </div>
         </div>
     </div>
