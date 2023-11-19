@@ -1,7 +1,7 @@
 <body cz-shortcut-listen="true">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#d9b ;">
         <div class="container-fluid ">
-          <div><img src="../../assets/logo.png" alt="" style="width: 20%;"></div>
+          <div><a href=""><img src="../../assets/logo.png" alt="" style="width: 20%;"></a></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -9,7 +9,7 @@
             <ul>
               <li class="nav-item dropdown text-light">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(8, 85, 77);">
-                 {{ApprenantConnect.anneeScolaire |date:'YYYY'}}
+                 {{ApprenantConnect.anneeScolaire |date:'YYYY'}} 
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                   <li><a class="dropdown-item" href="#">2020-2021</a></li>
@@ -23,23 +23,29 @@
       </nav>
    
       <div class="semestre d-flex justify-content-center "  *ngIf="showSemestre">
-        <button type="button" class="btn btn-primary ms-10  w-100" (click)="affichesem()" >{{buttontext}}
+        <button type="button" class="btn btn-secondary ms-10  w-100" (click)="affichesem()" >{{buttontext}}
         </button>
         {{Semestre1}}
-        <!-- <div *ngIf="showSemestre"><span>fvfei</span></div> -->
   
         </div>
         <div class="semestre d-flex justify-content-center "  *ngIf="!showSemestre">
           <button type="button" class="btn btn-primary  w-100" (click)="affichesem()" >{{buttontext}}
           </button>
           {{Semestre1}}
-          <div *ngIf="!showSemestre"><span>jkd</span></div>
-    
+          <div *ngIf="!showSemestre">
+            <tbody>
+            <tr *ngFor="let note of tabNotes">
+              <td id="titre">{{note.matiere}}</td>
+              <td class="text-center" id="titre"><span>{{note.valeur}}</span></td>
+              <td class="text-center" id="titre"><span >{{note.valeur}}</span></td>
+            </tbody>
           </div>
-    <main>
+            
+          </div>
+    <main style="border: 1px solid black;">
       <h1 class="visually-hidden"></h1>
     
-      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 500px;">
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-white " style="width: 280px; height: 500px; background-color: #d9b;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           
         </a>
@@ -47,10 +53,7 @@
               <img [src]="ApprenantConnect.imageApprenant" alt="" width="100" height="100" class="rounded-circle ms-5"><h3 class="user ms-5">{{ApprenantConnect.prenomApprenant}} {{ApprenantConnect.nomApprenant}}</h3>
               <!-- <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">mdo</font></font></strong> -->
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-              <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nouveau projet...</font></font></a></li>
-              <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres</font></font></a></li>
               <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Profil</font></font></a></li>
-              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">se déconnecter</font></font></a></li>
             </ul>
             <svg class="bi " width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
@@ -94,9 +97,9 @@
       
       
       
-      <div class="card-body" *ngIf="showDevoir==showSemestre">
+      <div [class]="tabNotes" *ngIf="showDevoir==showSemestre">
 
-        <table class="table"  >
+        <table class="table">
           <thead>
             <tr>
               <th >Matieres </th>
@@ -105,11 +108,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td id="titre">HTML/CSS</td>
-              <td class="text-center" id="titre"><span>16</span></td>
-              <td class="text-center" id="titre"><span >20</span></td>
-            </tr>
+            <tr *ngFor="let note of tabNotes">
+              <td id="titre">{{note.matiere}}</td>
+              <td class="text-center" id="titre"><span>{{note.valeur}}</span></td>
+              <td class="text-center" id="titre"><span >{{note.valeur}}</span></td>
+            <!-- </tr>
             <tr>
               <td>Angular</td>
               <td class="text-center"><span>9</span></td>
@@ -124,7 +127,7 @@
               <td>Javascripte</td>
               <td class="text-center"><span >10</span></td>
               <td class="text-center"><span >17</span></td>
-            </tr>
+            </tr> -->
             <tr>
               <td id="titre">Maquettage</td>
               <td  class="text-center" id="titre" ><span >12</span></td>
@@ -178,5 +181,5 @@
     
     
 
-    
+    <app-user-footer></app-user-footer>
     </body>
