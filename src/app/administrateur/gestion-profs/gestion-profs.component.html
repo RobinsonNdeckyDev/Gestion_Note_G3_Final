@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 col-md-2 p-0 sidebarContainer">
             <div class="d-flex sidebar flex-column flex-shrink-0 p-2">
-                <a class="text-center fw-bold fs-6  text-white text-decoration-none">
+                <a class="text-center fw-bold fs-4  text-white text-decoration-none">
                     Tableau de bord
                 </a>
                 <hr>
@@ -34,27 +34,27 @@
         </div>
         <div class="col-12 col-md-10 border">
             <div class="apercuForm p-2" id="apercuForm" *ngIf="currentContent === 'apercuForm'">
-                <h4 class="text-center">Aperçu des formateurs</h4>
+                <h4 class="text-center titre">Aperçu des formateurs</h4>
 
             </div>
 
             <div class="listeFormateurs p-2" id="listeFormateurs" *ngIf="currentContent === 'listeFormateurs'">
 
-                <h4 class="text-center fw-bold">Liste formateurs</h4>
+                <h4 class="text-center fw-bold titre">Liste formateurs</h4>
                 <div class="trait"></div>
-                <button class="btn btn-dark text-light mt-2 mb-2" data-bs-toggle="modal"
+                <button class="btn btn-white btnAjt mt-2 mb-2 active" data-bs-toggle="modal"
                     data-bs-target="#ajoutFormateur">Ajouter un formateur
                 </button>
 
 
                 <div class="table-responsive overflow-y-scroll" style="height: 55vh;">
-                    <table class="table table-striped align-items-center table-flush p-2">
-                        <thead class="sticky-top table-dark">
-                            <tr class="" style="background-color: brown !important;">
-                                <th scope="col">Profil</th>
-                                <th scope="col">Prénom du formateur</th>
-                                <th scope="col">Nom du formateur</th>
-                                <th scope="col">Actions</th>
+                    <table class="table align-items-center  p-2">
+                        <thead class="sticky-top fond-bleu">
+                            <tr class="">
+                                <th scope="col" class="fond-bleu text-white">Profil</th>
+                                <th scope="col" class="fond-bleu text-white">Prénom du formateur</th>
+                                <th scope="col" class="fond-bleu text-white">Nom du formateur</th>
+                                <th scope="col" class="fond-bleu text-white">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,9 +70,9 @@
                                         {{prof.nomF}}
                                     </td>
                                     <td>
-                                        <button class="btn btn-info fw-bold text-white me-2" data-bs-toggle="modal"
+                                        <button class="btn btnDet fw-bold active me-2" data-bs-toggle="modal"
                                             data-bs-target="#detailFormateur" (click)="detailFormt(prof.idFormateur)">Détails</button>
-                                        <button class="btn btn-danger fw-bold" (click)="supprimer(prof)">Désactiver</button>
+                                        <button class="btn fond-bleu text-light fw-bold" (click)="supprimer(prof)">Désactiver</button>
                                     </td>
                                 </tr>
                             </ng-container>
@@ -91,17 +91,17 @@
 
 
             <div class="formateursOff" id="formateursOff" *ngIf="currentContent === 'formateursOff'">
-                <h4 class="text-center fw-bold">Liste des formateurs désactivés</h4>
+                <h4 class="text-center fw-bold titre">Liste des formateurs désactivés</h4>
                 <div class="trait"></div>
 
                 <div class="table-responsive overflow-y-scroll mt-5" style="height: 55vh;">
                     <table class="table align-items-center table-flush">
-                        <thead class="sticky-top table-dark">
-                            <tr class="" style="background-color: brown !important;">
-                                <th scope="col">Profil</th>
-                                <th scope="col">Prénom du formateur</th>
-                                <th scope="col">Nom du formateur</th>
-                                <th scope="col">Actions</th>
+                        <thead class="sticky-top fond-bleu">
+                            <tr class="">
+                                <th scope="col" class="fond-bleu text-white">Profil</th>
+                                <th scope="col" class="fond-bleu text-white">Prénom du formateur</th>
+                                <th scope="col" class="fond-bleu text-white">Nom du formateur</th>
+                                <th scope="col" class="fond-bleu text-white">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -117,7 +117,7 @@
                                         {{prof.nomF}}
                                     </td>
                                     <td>
-                                        <button class="btn btn-success" (click)="activer(prof)">Activer</button>
+                                        <button class="btn btnDet active" (click)="activer(prof)">Activer</button>
                                     </td>
                                 </tr>
                             </ng-container>
@@ -134,11 +134,11 @@
 
 
 <div class="modal fade" id="detailFormateur">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 fw-bold">Détails du formateur</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5 fw-bold titre">Détails du formateur</h1>
+                <button type="button" class="btn-close fond-bleu text-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -146,20 +146,20 @@
                         <img src={{currentFormateur?.urlProfilF}} class="img-fluid" alt="">
                     </div>
                     <div class="col-12 col-md-9 p-2">
-                        <h4> {{currentFormateur?.prenomF}} </h4>
-                        <div class="w-100 border ">
+                        <h4 class="titre"> {{currentFormateur?.prenomF}} </h4>
+                        <div class="w-100">
                             {{currentFormateur?.descriptF}}
                         </div>
                     </div>
                 </div>
-
+                <div class="traitL my-2"></div>
                 <div class="row mt-2">
                     <div class="col-12 col-md-4">
-                        <span class="titleForm">Classe monitoré</span>
+                        <span class="titleForm titre fw-bold fs-5">Classe monitoré</span>
                         <p>L1</p>
                     </div>
                     <div class="col-12 col-md-4">
-                        <span class="titleForm">Matiéres dispensées</span>
+                        <span class="titleForm titre fw-bold fs-5">Matiéres dispensées</span>
                         <ul>
                             <li>_ Anglais</li>
                             <li>_ français</li>
@@ -169,7 +169,7 @@
                         </ul>
                     </div>
                     <div class="col-12 col-md-4">
-                        <span class="titleForm">Evaluations</span>
+                        <span class="titleForm titre fw-bold fs-5">Evaluations</span>
                         <ul>
                             <li><a href="#">_ Evaluation Anglais</a></li>
                             <li><a href="#">_ Evaluation français</a></li>
