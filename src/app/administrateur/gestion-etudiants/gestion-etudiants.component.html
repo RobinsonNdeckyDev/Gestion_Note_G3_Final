@@ -22,102 +22,82 @@
         </div>
         <div class="col-12 col-md-10">
             <div class="listeApprenant" id="apprenants" *ngIf="selectedNavItem === 'apprenants'">
-                <h4 class="text-center fw-bold mt-2">Liste Apprenants</h4>
+                <h4 class="text-center fw-bold mt-2 titre">Liste Apprenants</h4>
                 <div class="trait"></div>
 
                 <!-- Button modal Ajout Apprenants -->
-                <button type="button" class="btn btn-primary mt-5 " data-bs-toggle="modal" data-bs-target="#AjoutApprenants">
+                <button type="button" class="btn btn-white active mt-2 btnAjt" data-bs-toggle="modal" data-bs-target="#AjoutApprenants">
                     Ajout Apprenants
                 </button>
 
-                <div class="main-content mt-3">
-                    <div class="container mt-7">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card shadow">
-                                    <div class="table-responsive overflow-y-scroll" style="height: 35vh;">
-                                        <table class="table align-items-center table-flush">
-                                            <thead class="sticky-top">
-                                                <tr>
-                                                    <th scope="col">Profil</th>
-                                                    <th scope="col">Nom Apprenant</th>
-                                                    <th scope="col">Prénom Apprenant</th>
-                                                    <th scope="col">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <ng-container  *ngFor="let apprenant of tabApprenants" class="">
-                                                    <tr *ngIf="apprenant.etatApprenant==1">
-                                                    <td>
-                                                        <img [src]="apprenant.imageApprenant" alt="" class="img-fluid" style="height: 50px;">
-                                                    </td>
-                                                        <td>
-                                                            {{apprenant.nomApprenant}}
-                                                        </td>
-                                                        <td>
-                                                            {{apprenant.prenomApprenant}}
-                                                        </td>
-                                                        <td>
-                                                            <button class="btn btn-info fw-bold text-white me-2" data-bs-toggle="modal" data-bs-target="#DetailsApprenants"
-                                                                (click)="details(apprenant.idApprenant)">Détails</button>
-                                                            <button class="btn btn-danger fw-bold" (click)="Desactiver(apprenant)">Désactiver</button>
-                                                        </td>
-                                                    </tr>
-                                                </ng-container>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="table-responsive overflow-y-scroll mt-2" style="height: 55vh;">
+                    <table class="table align-items-center  p-2">
+                        <thead class="sticky-top fond-bleu">
+                            <tr class="">
+                                <th scope="col" class="fond-bleu text-white">Profil</th>
+                                <th scope="col" class="fond-bleu text-white">Prénom Apprenant</th>
+                                <th scope="col" class="fond-bleu text-white">Nom Apprenant</th>
+                                <th scope="col" class="fond-bleu text-white">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let apprenant of tabApprenants" class="">
+                                <tr *ngIf=" apprenant.etatApprenant==1">
+                                    <td>
+                                        <img [src]="apprenant.imageApprenant" alt="" class="img-fluid" style="height: 50px; width: 50px;">
+                                    </td>
+                                    <td>
+                                        {{apprenant.nomApprenant}}
+                                    </td>
+                                    <td>
+                                        {{apprenant.prenomApprenant}}
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-white active me-2 btnAjt" data-bs-toggle="modal" data-bs-target="#DetailsApprenants"
+                                            (click)="details(apprenant.idApprenant)">Détails</button>
+                                        <button class="btn fond-bleu text-light fw-bold" (click)="Desactiver(apprenant)">Désactiver</button>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
             <div class="listeApprenantDesactiver" id="desactiver" *ngIf="selectedNavItem === 'desactiver'">
-                <h4 class="text-center fw-bold mt-3">Liste Apprenants Désactiver</h4>
+                <h4 class="text-center fw-bold mt-3 titre">Liste Apprenants Désactiver</h4>
                 <div class="trait"></div>
-                
-                <div class="main-content mt-3">
-                    <div class="container mt-7">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card shadow">
-                                    <div class="table-responsive overflow-y-scroll" style="height: 35vh;">
-                                        <table class="table align-items-center table-flush">
-                                            <thead class="sticky-top">
-                                                <tr>
-                                                    <th scope="col">Profil</th>
-                                                    <th scope="col">Nom Apprenant</th>
-                                                    <th scope="col">Prénom Apprenant</th>
-                                                    <th scope="col">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <ng-container *ngFor="let apprenant of tabApprenants" class="">
-                                                    <tr *ngIf="apprenant.etatApprenant==0">
-                                                        <td>
-                                                            <img [src]="apprenant.imageApprenant" alt="" class="img-fluid"
-                                                                style="height: 50px;">
-                                                        </td>
-                                                        <td>
-                                                            {{apprenant.nomApprenant}}
-                                                        </td>
-                                                        <td>
-                                                            {{apprenant.prenomApprenant}}
-                                                        </td>
-                                                        <td>
-                                                            <button class="btn btn-success fw-bold" (click)="activer(apprenant)">Activer</button>
-                                                        </td>
-                                                    </tr>
-                                                </ng-container>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="table-responsive overflow-y-scroll mt-2" style="height: 55vh;">
+                    <table class="table align-items-center  p-2">
+                        <thead class="sticky-top fond-bleu">
+                            <tr class="">
+                                <th scope="col" class="fond-bleu text-white">Profil</th>
+                                <th scope="col" class="fond-bleu text-white">Prénom Apprenant</th>
+                                <th scope="col" class="fond-bleu text-white">Nom Apprenant</th>
+                                <th scope="col" class="fond-bleu text-white">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let apprenant of tabApprenants" class="">
+                                <tr *ngIf=" apprenant.etatApprenant==0">
+                                    <td>
+                                        <img [src]="apprenant.imageApprenant" alt="" class="img-fluid"
+                                            style="height: 50px; width: 50px;">
+                                    </td>
+                                    <td>
+                                        {{apprenant.nomApprenant}}
+                                    </td>
+                                    <td>
+                                        {{apprenant.prenomApprenant}}
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-white active btnAjt fw-bold" (click)="activer(apprenant)">Activer</button>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -129,7 +109,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="AjoutApprenantsLabel">Ajout Apprenants</h1>
+                <h1 class="modal-title fs-5 titre" id="AjoutApprenantsLabel">Ajout Apprenants</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -169,8 +149,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" (click)=" ajoutApprenantsValider()">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn save" (click)=" ajoutApprenantsValider()">Ajout</button>
+                <button type="button" class="btn close" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -181,7 +161,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="DetailsApprenantsLabel">Details Apprenants</h1>
+                <h1 class="modal-title fs-5 titre" id="DetailsApprenantsLabel">Details Apprenants</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -199,7 +179,7 @@
                     </div>
             </div> 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn close" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

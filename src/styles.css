@@ -44,3 +44,13 @@ body {
 .titre {
     color: #DD99BB;
 }
+
+.save{
+    background-color: #DD99BB !important;
+    color: #fff !important;
+}
+
+.close{
+    background-color: #F2D4CC !important;
+    color: #fff !important;
+}
