@@ -4,4 +4,5 @@ export class Matieres {
   etatMatiere: number = 1;
   descriptionMatiere: string = "";
   Evaluations: any = [];
+nom: any;
 }

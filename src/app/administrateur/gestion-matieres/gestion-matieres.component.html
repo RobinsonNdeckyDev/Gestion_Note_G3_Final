@@ -36,10 +36,38 @@
                 <h4 class="text-center fw-bold">Liste des matiéres</h4>
                 <div class="trait"></div>
                 <button class="btn btn-dark text-light mt-2 mb-2" data-bs-toggle="modal"
-                    data-bs-target="#ajoutMatiere" (click)="ajoutMatiere()">Ajouter une matiére
+                    data-bs-target="#ajoutMatiere" type="submit">Ajouter une matiére
                 </button>
 
-                <div class="container mt-3 border">
+
+                <div class="table-responsive overflow-y-scroll mt-5" style="height: 50vh;">
+                    <table class="table align-items-center table-flush">
+                        <thead class="sticky-top table-dark">
+                            <tr class="" style="background-color: #a52a2a !important;">
+                                <th scope="col">Nom de la Matiére</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let matiere of tabMatiere" class="">
+                                <tr>
+                                    <td>
+                                        <p>{{matiere.nomMatiere}}</p>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#detailMatiere"
+                                            (click)="detailMatiere(matiere.idMatiere)">Détails
+                                        </button>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <!-- <div class="container mt-3 border">
                     <div class="row titleTab bg-light">
                         <div class="col-md-6">
                             Nom matiére
@@ -62,7 +90,8 @@
                         </div>
                     </ng-container>
 
-                </div>
+                </div> -->
+
             </div>
 
         </div>
