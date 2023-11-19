@@ -16,6 +16,7 @@ import { HeaderAdminComponent } from './header-footer/admin-h-f/header-admin/hea
 import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/footer-admin.component';
 import { GestionMatieresComponent } from './administrateur/gestion-matieres/gestion-matieres.component';
 import { GestionClassesComponent } from './administrateur/gestion-classes/gestion-classes.component';
+import { ProfsComponent } from './professeurs/profs/profs.component';
 
 @NgModule({
 
@@ -24,7 +25,7 @@ import { GestionClassesComponent } from './administrateur/gestion-classes/gestio
     AdminComponent,
     GestionProfsComponent,
     GestionEtudiantsComponent,
-    // ProfsComponent,
+    ProfsComponent,
     GestionEvaluationComponent,
     NotesComponent,
     EtudiantsComponent,

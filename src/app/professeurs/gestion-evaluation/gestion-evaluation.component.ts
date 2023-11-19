@@ -2,6 +2,7 @@ import { Evaluations } from './../../models/evaluation';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
 
 
 @Component({
@@ -39,17 +40,30 @@ throw new Error('Method not implemented.');
   programmerEvaluation(): void {
 
     // this.profService.programmerEvaluation(this.nouvelleEvaluation);
-    this.nouvelleEvaluation = {
-      id: 0,
-      semestre: '',
-      date: new Date(),
-      type: '',
-      anneeScolaire: '',
-      etat: '',
-      matiere: '',
-  
-    };
+    // this.nouvelleEvaluation = {
+    //   id: 0,
+    //   semestre: '',
+    //   date: new Date(),
+    //   type: '',
+    //   anneeScolaire: '',
+    //   etat: '',
+    //   matiere: '',
+    // };
+    this.evaluations.push(this.nouvelleEvaluation);
+    localStorage.setItem("evaluations",JSON.stringify(this.evaluations));
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
  // Methode pour supprimer le contact
   
