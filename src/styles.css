@@ -27,3 +27,20 @@ body {
     background-color: #fff;
     color: #D9B !important;
 }
+
+.fond-bleu {
+    background-color: #DD99BB !important;
+}
+
+.btnAjt {
+    color: #DD99BB !important;
+}
+
+.btnDet {
+    background-color: white;
+    color: #DD99BB;
+}
+
+.titre {
+    color: #DD99BB;
+}

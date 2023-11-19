@@ -27,25 +27,25 @@
         </div>
         <div class="col-12 col-md-10 border">
             <div class="apercuForm p-2" id="apercuForm" *ngIf="currentContent === 'apercuForm'">
-                <h4 class="text-center">Aperçu des Matiéres</h4>
+                <h4 class="text-center titre">Aperçu des Matiéres</h4>
 
             </div>
 
             <div class="listeFormateurs p-2" id="listeFormateurs" *ngIf="currentContent === 'listeFormateurs'">
 
-                <h4 class="text-center fw-bold">Liste des matiéres</h4>
+                <h4 class="text-center fw-bold titre">Liste des matiéres</h4>
                 <div class="trait"></div>
-                <button class="btn btn-dark text-light mt-2 mb-2" data-bs-toggle="modal"
+                <button class="btn btn-white btnAjt active text-light mt-2 mb-2" data-bs-toggle="modal"
                     data-bs-target="#ajoutMatiere" type="submit">Ajouter une matiére
                 </button>
 
 
                 <div class="table-responsive overflow-y-scroll mt-5" style="height: 50vh;">
                     <table class="table align-items-center table-flush">
-                        <thead class="sticky-top table-dark">
-                            <tr class="" style="background-color: #a52a2a !important;">
-                                <th scope="col">Nom de la Matiére</th>
-                                <th scope="col">Actions</th>
+                        <thead class="sticky-top">
+                            <tr class="">
+                                <th scope="col" class="fond-bleu text-white">Nom de la Matiére</th>
+                                <th scope="col" class="fond-bleu text-white">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,7 +55,7 @@
                                         <p>{{matiere.nomMatiere}}</p>
                                     </td>
                                     <td>
-                                        <button class="btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#detailMatiere"
+                                        <button class="btn btnDet active" data-bs-toggle="modal" data-bs-target="#detailMatiere"
                                             (click)="detailMatiere(matiere.idMatiere)">Détails
                                         </button>
                                     </td>
@@ -64,33 +64,6 @@
                         </tbody>
                     </table>
                 </div>
-
-
-
-                <!-- <div class="container mt-3 border">
-                    <div class="row titleTab bg-light">
-                        <div class="col-md-6">
-                            Nom matiére
-                        </div>
-                        <div class="col-md-6">
-                            <h6 class="text-center">Actions</h6>
-                        </div>
-                    </div>
-
-                    <ng-container *ngFor="let matiere of tabMatiere">
-                        <div class="row p-2" *ngIf="matiere.etatMatiere==1">
-                            <div class="col-md-6">
-                                <p> {{matiere.nomMatiere}} </p>
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <button class="btn fond-bleu text-light fw-bold" data-bs-toggle="modal" data-bs-target="#detailMatiere"
-                                    (click)="detailMatiere(matiere.idMatiere)">Détails
-                                </button>
-                            </div>
-                        </div>
-                    </ng-container>
-
-                </div> -->
 
             </div>
 
@@ -103,24 +76,28 @@
 
 
 <div class="modal fade" id="detailMatiere">
-    <div class="modal-dialog modal-dialog-center">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 fw-bold">Détail matiére</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5 fw-bold titre">Détail matiére</h1>
+                <button type="button" class="btn-close fond-bleu text-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-12 p-2">
-                        <h4> {{currentMatiere?.nomMatiere}} </h4>
+                        <h4>
+                            <span class="titre fw-bold ">Matiére: </span><br>
+                             {{currentMatiere?.nomMatiere}} 
+                        </h4>
                         <p>
-                            {{currentMatiere?.descriptionMatiere}}
+                            <span class="titre fw-bold fs-4">Description: </span><br>
+                             {{currentMatiere?.descriptionMatiere}}
                         </p>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn fond-bleu text-light" data-bs-dismiss="modal">Fermer</button>
             </div>
         </div>
     </div>
@@ -138,8 +115,8 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 fw-bold">Ajouter une matiére</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5 fw-bold titre">Ajouter une matiére</h1>
+                <button type="button" class="btn-close fond-bleu text-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="">
@@ -161,7 +138,7 @@
 
                     <!-- Envoi du formulaire -->
                     <div class="d-flex justify-content-end">
-                        <button class="btn btn-dark text-light" type="submit" data-bs-dismiss="modal" (click)="ajoutMatiere()">Ajouter</button>
+                        <button class="btn fond-bleu text-light" type="submit" data-bs-dismiss="modal" (click)="ajoutMatiere()">Ajouter</button>
                     </div>
                 </form>
             </div>

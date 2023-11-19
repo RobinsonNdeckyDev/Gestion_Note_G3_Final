@@ -149,8 +149,8 @@ export class GestionProfsComponent {
       icon: "warning",
       showCancelButton: true,
       cancelButtonText: `Annuler`,
-      confirmButtonColor: "#0000FF",
-      cancelButtonColor: "red",
+      confirmButtonColor: "#DD99BB",
+      cancelButtonColor: "#DD99BB",
       confirmButtonText: "Oui, supprimer!"
     }).then((result) => {
       if (result.isConfirmed) {
@@ -170,8 +170,8 @@ export class GestionProfsComponent {
       icon: "warning",
       showCancelButton: true,
       cancelButtonText: `Annuler`,
-      confirmButtonColor: "#0000FF",
-      cancelButtonColor: "red",
+      confirmButtonColor: "#DD99BB",
+      cancelButtonColor: "#DD99BB",
       confirmButtonText: "Oui, activer!"
     }).then((result) => {
       if (result.isConfirmed) {
