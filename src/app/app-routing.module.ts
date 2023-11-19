@@ -13,6 +13,7 @@ import { NotesModule } from './professeurs/note/note.module';
 const routes: Routes = [
   { path: '', redirectTo : 'connexion', pathMatch: 'full' },
   { path: 'connexion', component: LoginComponent},
+  { path: 'formateur', component: ProfsComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'formateur/:id', component: ProfsComponent},
   { path: 'etudiant/:id', component: EtudiantsComponent},
