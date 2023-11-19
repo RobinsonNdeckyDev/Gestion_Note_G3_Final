@@ -1,0 +1,57 @@
+
+/*-----------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+  
+	}
+
+.container{
+  display: flex;
+  /* justify-content: flex-end; */
+  /* text-align: end; */
+  margin: 0 auto;
+  width: 100%;
+  /* height: 400px; */
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.139);
+}
+
+.prime{
+  /* border: 1px solid green !important; */
+}
+/* #exampleModal{
+ border: 1px solid green;
+ margin: 0 auto;
+} */
+#btnTable{
+  height: 40px;
+  background-color: #D9B;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin: 10px;
+  padding: 5px;
+}
+th, td{
+  border: 1px solid white;
+  padding: 8px;
+  text-align: left;
+}
+#listTr{
+  /* border: 1px solid green; */
+  background-color: #D9B;}
+#elemTr{
+  /* border: 1px solid red; */
+  color: WHITE;
+  width: 30px !important;
+}
+.table th{
+  padding: .5em .7em;
+  text-align: left;
+  vertical-align: middle;
+}
+.tableList{
+  /* border: 1px solid greenyellow; */
+  width: 174.2vh;
+}
+

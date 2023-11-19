@@ -10,12 +10,14 @@ import { EtudiantsComponent } from './etudiants/etudiants.component';
 
 
 
+
 const routes: Routes = [
   { path: '', redirectTo : 'connexion', pathMatch: 'full' },
   { path: 'connexion', component: LoginComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'formateur', component: ProfsComponent},
   { path: 'etudiant', component: EtudiantsComponent},
+  { path: 'professeurs', component: ProfsComponent}
 ];
 
 

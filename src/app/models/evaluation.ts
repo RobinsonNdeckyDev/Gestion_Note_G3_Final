@@ -1,9 +1,11 @@
 export class Evaluations {
-  idEvaluation: number = 0;
+  id ?:number;
   semestre: string = '';
   date: Date = new Date();
   type: string = '';
-  annee_scolaire: Date = new Date();
+  anneeScolaire: string = '';
   etat: string = '';
-  Classe: any = [];
+  matiere: string = '';
+  
 }
+
