@@ -14,9 +14,11 @@ export class LoginComponent {
   // Utilisateur trouvé 
   userApprenantFound: any;
   userAdminFound: any;
+  userFormateurFound: any;
 
-  // Déclaration du tableau pour récuperer les classes
+  // Déclaration du tableau pour récuperer les Apprenants et les formateurs
   dbApprenants: any;
+  dbFormateurs: any;
 
 
   // Notre tableau tabAdmin
@@ -50,6 +52,9 @@ export class LoginComponent {
     this.dbApprenants = JSON.parse(localStorage.getItem("Apprenants") || "[]");
     console.log(this.dbApprenants);
 
+    this.dbFormateurs = JSON.parse(localStorage.getItem("formateurs") || "[]");
+    console.log(this.dbFormateurs);
+
     // Notre objet compteAdmin
     let compteAdmin = {
       emailAdminLogin : 'admin@gmail.com',
@@ -79,26 +84,21 @@ export class LoginComponent {
     }else if(this.passwordLogin.length < 5){
       this.alertMessage("error", "Attention", "Le mot de passe doit contenir plus de huit caractéres", timer);
     }else{
-      this.userApprenantFound = this.dbApprenants.find((element: any) => element.emailApprenant == this.emailLogin && element.passwordApprenant == this.passwordLogin && element.etatApprenant==1);
+      this.userAdminFound = this.tabAdmin.find((element: any) => element.emailAdminLogin == this.emailLogin && element.passwordAdminLogin == this.passwordLogin);
+      this.userApprenantFound = this.dbApprenants.find((element: any) => element.emailApprenant == this.emailLogin && element.passwordApprenant == this.passwordLogin && element.etatApprenant == 1);
+      this.userFormateurFound = this.dbFormateurs.find((element: any) => element.emailF == this.emailLogin && element.passwordF == this.passwordLogin && element.etatFormateur == 1);
       if (this.userApprenantFound) {
-        // Le compte existe 
-        alert(this.userApprenantFound.idApprenant)
-        console.error(this.userApprenantFound.idApprenant)
         this.alertMessage("success", "Bravo", "Vous etes connecté avec succés", timer);
         this.route.navigate(['etudiant', this.userApprenantFound.idApprenant]);
-      }
-      else {
-        this.alertMessage("error","Oups!", "Le compte n'exite pas ou est désactiver",timer);
-      }
-
-      this.userAdminFound = this.tabAdmin.find((element: any) => element.emailAdminLogin == this.emailLogin && element.passwordAdminLogin == this.passwordLogin);
-      if (this.userAdminFound) {
-        // Le compte existe 
+      }else if (this.userAdminFound) { 
         this.alertMessage("success", "Bravo", "Vous etes connecté avec succés", timer);
         this.route.navigate(['admin']);
-      }
+      } else if (this.userFormateurFound) {
+        this.alertMessage("success", "Bravo", "Vous etes connecté avec succés", timer);
+        this.route.navigate(['formateur',this.userFormateurFound.idFormateur]);
+      } 
       else {
-        this.alertMessage("error","Oups!", "Le compte n'exite pas", timer);
+        this.alertMessage("error", "Oups!", "Le compte n'exite pas ou est désactiver", timer);
       }
     } 
 

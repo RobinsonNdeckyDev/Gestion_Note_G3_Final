@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', redirectTo : 'connexion', pathMatch: 'full' },
   { path: 'connexion', component: LoginComponent},
   { path: 'admin', component: AdminComponent},
-  { path: 'formateur', component: ProfsComponent},
+  { path: 'formateur/:id', component: ProfsComponent},
   { path: 'etudiant/:id', component: EtudiantsComponent},
 ];
 
