@@ -92,6 +92,7 @@ throw new Error('Method not implemented.');
     // Methode pour modifier le contact
 
     modifierEvaluation(id: number): void {
+      
       // Logique pour récupérer l'évaluation en fonction de l'ID et afficher un formulaire de modification
       // Par exemple :
       const evaluationAModifier = this.evaluations.find((evaluation) => evaluation.id === id);

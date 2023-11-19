@@ -1,20 +1,20 @@
 
 <div class="container d-flex flex-column mt-5">
   
-  <div class="top">
+  <div class="top-modal ">
     <div class="bouton d-flex justify-content-end">
       <button type="button" class="btn btn-primary" id="btnTable" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Programmer Evaluation
       </button>
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog" style="margin: 0 auto;">
         <div class="modal-content" >
           <div class="modal-header">
-            <h5 class="text-center" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="text-center" style="color: #D9B; font-weight: bold; padding: 20px !important; margin: 0 auto;" id="exampleModalLabel">Programmer Une formation</h5>
+            <button type="button" class="btn-close me-3"  data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body p-5">
             <form>
               <div class="mb-3 ">
 
@@ -39,16 +39,23 @@
                 <label for="anneeScolaire">Année Scolaire:</label>
                 <input type="text" name="anneeScolaire" class="form-control" id="anneeScolaire" [(ngModel)]="nouvelleEvaluation.anneeScolaire" required>
               </div>
+          
               <div class="mb-3">
-
                 <label for="matiere">Matière:</label>
-                <input type="text" name="matiere" class="form-control" id="matiere" [(ngModel)]="nouvelleEvaluation.matiere" required>
+                <select id="matiere" name="matiere" class="form-select" [(ngModel)]="nouvelleEvaluation.matiere" required>
+                  <option value="Anglais">Anglais</option>
+                  <option value="Maths">Maths</option>
+                  <option value="Français">Français</option>
+                  <option value="Espagnol">Espagnol</option>
+                  <option value="Informatique">Informatique</option>
+                </select>
               </div>
+
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary prime" (click)="programmerEvaluation()">Programmer Évaluation</button>
+          <div class="modal-footer p-5">
+            <button type="button" class="btn " style="border: 1px solid #D9B; color: #D9B; font-weight: bold; padding: 5px;" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn " style="background-color: #D9B; color: white; font-weight: bold;margin-left: 5px; padding: 5px;" (click)="programmerEvaluation()">Programmer Évaluation</button>
           </div>
         </div>
       </div>

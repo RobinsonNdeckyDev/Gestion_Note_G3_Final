@@ -16,8 +16,8 @@
   box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.139);
 }
 
-.prime{
-  /* border: 1px solid green !important; */
+.modal-content{
+  margin: 0 auto !important;
 }
 /* #exampleModal{
  border: 1px solid green;
