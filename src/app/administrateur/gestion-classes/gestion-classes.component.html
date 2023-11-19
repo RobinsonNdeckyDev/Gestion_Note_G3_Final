@@ -25,8 +25,37 @@
                 <div class="trait"></div>
                 <div class="trait"></div>
                 <button class="btn btn-dark text-light mt-2 mb-2" data-bs-toggle="modal"
-                    data-bs-target="#ajoutFormateur">Ajouter une classe</button>
-                <div class="container mt-3 border">
+                    data-bs-target="#ajoutFormateur">Ajouter une classe
+                </button>
+
+
+                <div class="table-responsive overflow-y-scroll mt-5" style="height: 50vh;">
+                    <table class="table align-items-center table-flush">
+                        <thead class="sticky-top table-dark">
+                            <tr class="" style="background-color: #a52a2a !important;">
+                                <th scope="col">Nom de la classe</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let classe of tabClasses" class="">
+                                <tr>
+                                    <td>
+                                        {{classe.nom}}
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#detailMatiere"
+                                            (click)="chargerInfosClasse(classe)">Modifier
+                                        </button>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- <div class="container mt-3 border">
                     <div class="row titleTab bg-light">
                         <div class="col-md-6">
                             Nom classe
@@ -45,7 +74,9 @@
                                 (click)="chargerInfosClasse(class)">Modifier</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+
             </div>
         </div>
     </div>

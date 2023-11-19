@@ -43,94 +43,86 @@
                 <h4 class="text-center fw-bold">Liste formateurs</h4>
                 <div class="trait"></div>
                 <button class="btn btn-dark text-light mt-2 mb-2" data-bs-toggle="modal"
-                    data-bs-target="#ajoutFormateur">Ajouter un formateur</button>
-                <div class="container mt-3 border">
-                    <div class="row titleTab bg-light">
-                        <div class="col">
-                            <p>Profil</p>
-                        </div>
-                        <div class="col">
-                            <p>Pénom Formateur</p>
-                        </div>
-                        <div class="col">
-                            Nom Formateur
-                        </div>
-                        <div class="col">
-                            <h6 class="text-center">Actions</h6>
-                        </div>
-                    </div>
-                    <div class=" scroll-container">
-                        <ng-container *ngFor="let prof of tabFormateur">
-                            <div class="row p-2" *ngIf="prof.etatFormateur==1">
-                                <div class="col-md-3">
-                                    <img [src]=" prof.urlProfilF " alt="" style="width: 40px;">
-                                </div>
-                                <div class="col-md-3">
-                                    <p> {{prof.prenomF}} </p>
-                                </div>
-                                <div class="col-md-3">
-                                    {{prof.nomF}}
-                                </div>
-                                <div class="col-md-3 d-flex justify-content-between">
-                                    <button class="btn fond-bleu text-light fw-bold" data-bs-toggle="modal" data-bs-target="#detailFormateur"
-                                        (click)="detailFormt(prof.idFormateur)">Détails</button>
-                                    <button class="btn btn-danger" (click)="supprimer(prof)">Désactiver</button>
-                                </div>
-                            </div>
-                            <!-- <div class="col-md-3">
-                                <p> {{prof.prenomF}} </p>
-                            </div>
-                            <div class="col-md-3">
-                                {{prof.nomF}}
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-between">
-                                <button class="btn fond-bleu text-light fw-bold" data-bs-toggle="modal" data-bs-target="#detailFormateur"
-                                    (click)="detailFormt(prof.idFormateur)">Détails</button>
-                                <button class="btn btn-danger" (click)="supprimer(prof)">Désactiver</button>
-                            </div> -->
-                        </ng-container>
-                    </div>
-                      
+                    data-bs-target="#ajoutFormateur">Ajouter un formateur
+                </button>
+
+
+                <div class="table-responsive overflow-y-scroll" style="height: 55vh;">
+                    <table class="table table-striped align-items-center table-flush p-2">
+                        <thead class="sticky-top table-dark">
+                            <tr class="" style="background-color: brown !important;">
+                                <th scope="col">Profil</th>
+                                <th scope="col">Prénom du formateur</th>
+                                <th scope="col">Nom du formateur</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let prof of tabFormateur" class="">
+                                <tr *ngIf="prof.etatFormateur==1">
+                                    <td>
+                                        <img [src]="prof.urlProfilF" alt="" class="img-fluid" style="height: 50px; width: 50px;">
+                                    </td>
+                                    <td>
+                                        {{prof.prenomF}}
+                                    </td>
+                                    <td>
+                                        {{prof.nomF}}
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-info fw-bold text-white me-2" data-bs-toggle="modal"
+                                            data-bs-target="#detailFormateur" (click)="detailFormt(prof.idFormateur)">Détails</button>
+                                        <button class="btn btn-danger fw-bold" (click)="supprimer(prof)">Désactiver</button>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
                 </div>
+
             </div>
+
+
+
+
+
+
+
+
 
             <div class="formateursOff" id="formateursOff" *ngIf="currentContent === 'formateursOff'">
                 <h4 class="text-center fw-bold">Liste des formateurs désactivés</h4>
                 <div class="trait"></div>
-                
-                <div class="container mt-3 mb-5 border">
-                    <div class="row titleTab bg-light">
-                        <div class="col-md-3">
-                            <p>Profil</p>
-                        </div>
-                        <div class="col-md-3">
-                            <p>Pénom Formateur</p>
-                        </div>
-                        <div class="col-md-3">
-                            Nom Formateur
-                        </div>
-                        <div class="col-md-3">
-                            <h6 class="text-center">Actions</h6>
-                        </div>
-                    </div>
-                    <div class=" scroll-container">
-                        <ng-container *ngFor="let prof of tabFormateur">
-                            <div class="row p-2" *ngIf="prof.etatFormateur==0">
-                                <div class="col-md-3">
-                                    <img [src]=" prof.urlProfilF " alt="" style="width: 40px;">
-                                </div>
-                                <div class="col-md-3">
-                                    <p> {{prof.prenomF}} </p>
-                                </div>
-                                <div class="col-md-3">
-                                    {{prof.nomF}}
-                                </div>
-                                <div class="col-md-3 d-flex justify-content-center">
-                                    <button class="btn btn-success" (click)="activer(prof)">Activer</button>
-                                </div>
-                            </div>
-                        </ng-container>
-                    </div>
+
+                <div class="table-responsive overflow-y-scroll mt-5" style="height: 55vh;">
+                    <table class="table align-items-center table-flush">
+                        <thead class="sticky-top table-dark">
+                            <tr class="" style="background-color: brown !important;">
+                                <th scope="col">Profil</th>
+                                <th scope="col">Prénom du formateur</th>
+                                <th scope="col">Nom du formateur</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let prof of tabFormateur" class="">
+                                <tr *ngIf="prof.etatFormateur==0">
+                                    <td>
+                                        <img [src]="prof.urlProfilF" alt="" class="img-fluid" style="height: 50px; width: 50px;">
+                                    </td>
+                                    <td>
+                                        {{prof.prenomF}}
+                                    </td>
+                                    <td>
+                                        {{prof.nomF}}
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-success" (click)="activer(prof)">Activer</button>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -287,10 +279,6 @@
                     </div>
                 </form>
             </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" >Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
         </div>
     </div>
 </div>
