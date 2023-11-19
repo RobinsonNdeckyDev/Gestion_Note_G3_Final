@@ -3,29 +3,29 @@
 
 <div class="row m-2 p-1">
     <div class="col-12 col-md-3">
-        <div class=" border">
-            <button class="btn  btnProf w-100" [ngClass]="{'fond-bleu': boutonActif === 1}"
+        <div class="shadow">
+            <button class="btn  btnProf w-100" [ngClass]="{'fond-btn': boutonActif === 1}"
                 (click)="showComponant('gestionProfs')" (click)="boutonActif = 1">Gestion Formateurs
             </button>
         </div>
     </div>
     <div class="col-12 col-md-3">
-        <div class=" border">
-            <button class="btn  btnEtudiant w-100" [ngClass]="{'fond-bleu': boutonActif === 2}"
+        <div class=" shadow">
+            <button class="btn  btnEtudiant w-100" [ngClass]="{'fond-btn': boutonActif === 2}"
                 (click)="showComponant('gestionEtud')" (click)="boutonActif = 2">Gestion Etudiants
             </button>
         </div>
     </div>
     <div class="col-12 col-md-3">
-        <div class=" border">
-            <button class="btn  btnProf w-100" [ngClass]="{'fond-bleu': boutonActif === 3}"
+        <div class=" shadow">
+            <button class="btn  btnProf w-100" [ngClass]="{'fond-btn': boutonActif === 3}"
                 (click)="showComponant('gestionMatieres')" (click)="boutonActif = 3">Gestion Matieres
             </button>
         </div>
     </div>
     <div class="col-12 col-md-3">
-        <div class=" border">
-            <button class="btn  btnProf w-100" [ngClass]="{'fond-bleu': boutonActif === 4}"
+        <div class=" shadow">
+            <button class="btn  btnProf w-100" [ngClass]="{'fond-btn': boutonActif === 4}"
                 (click)="showComponant('gestionClasses')" (click)="boutonActif = 4">Gestion Classes
             </button>
         </div>
