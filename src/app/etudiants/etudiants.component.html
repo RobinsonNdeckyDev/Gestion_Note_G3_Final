@@ -1,5 +1,6 @@
+<div class="container-fluid" >
 <body cz-shortcut-listen="true">
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#d9b ;">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#d9b ; border: 1px solid rgb(239, 237, 237);">
         <div class="container-fluid ">
           <div><a href=""><img src="../../assets/logo.png" alt="" style="width: 20%;"></a></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +23,7 @@
         </div>
       </nav>
    
-      <div class="semestre d-flex justify-content-center "  *ngIf="showSemestre">
+      <!-- <div class="semestre d-flex justify-content-center "  *ngIf="showSemestre">
         <button type="button" class="btn btn-secondary ms-10  w-100" (click)="affichesem()" >{{buttontext}}
         </button>
         {{Semestre1}}
@@ -41,8 +42,8 @@
             </tbody>
           </div>
             
-          </div>
-    <main style="border: 1px solid black;">
+          </div> -->
+    <main >
       <h1 class="visually-hidden"></h1>
     
       <div class="d-flex flex-column flex-shrink-0 p-3 text-white " style="width: 280px; height: 500px; background-color: #d9b;">
@@ -64,12 +65,12 @@
           
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+          <!-- <li class="nav-item">
+            <a href="#" class="nav-link " aria-current="page">
               <svg class="bi me-2" width="16" height="16" ><use xlink:href="#home"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
               Maison
             </font></font></a>
-          </li>
+          </li> -->
           <li>
             <a href="#" class="nav-link text-white">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
@@ -79,13 +80,13 @@
           <li>
             <a style="cursor: pointer;" class="nav-link text-white" (click)= "Afficher()">
               <svg class="bi me-2" width="16" height="16" ><use xlink:href="#table"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit; ">
-              Note de Devoir 
+              Semestre1 
             </font></font></a>
           </li>
           <li>
             <a  style="cursor: pointer;" class="nav-link text-white"  (click)="Afficher()">
               <svg class="bi me-2" width="16" height="16" style="background-color: aqua;"><use xlink:href="#grid"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-             Note d'examen
+             Semestre2
             </font></font></a>
           </li>
         </ul>
@@ -103,8 +104,8 @@
           <thead>
             <tr>
               <th >Matieres </th>
-              <th class="text-center">Devoir n°1 <i class="bi bi-pencil-square"></i></th>
-              <th class="text-center">Devoir n°2 <i class="bi bi-pencil-square"></i></th>
+              <th class="text-center">Devoir  <i class="bi bi-pencil-square"></i></th>
+              <th class="text-center">Examen <i class="bi bi-pencil-square"></i></th>
             </tr>
           </thead>
           <tbody>
@@ -128,11 +129,11 @@
               <td class="text-center"><span >10</span></td>
               <td class="text-center"><span >17</span></td>
             </tr> -->
-            <tr>
+            <!-- <tr>
               <td id="titre">Maquettage</td>
               <td  class="text-center" id="titre" ><span >12</span></td>
               <td class="text-center" id="titre"><span >13</span></td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
@@ -143,33 +144,34 @@
             <thead>
               <tr>
                 <th >Matieres </th>
-                <th class="text-center">Notes examen<i class="bi bi-pencil-square "></i>
+                <th class="text-center">Devoir<i class="bi bi-pencil-square "></i>
+                  <th class="text-center">Examen <i class="bi bi-pencil-square"></i>
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td id="titre">HTML/CSS</td>
+                <td id="titre">Math</td>
                 <td class="text-center" id="titre"><span>16</span></td>
                 <td class="text-center" id="titre"><span >20</span></td>
               </tr>
               <tr>
-                <td>Angular</td>
+                <td>Français</td>
                 <td class="text-center"><span>9</span></td>
                 <td class="text-center"><span>18</span></td>
               </tr>
               <tr>
-                <td id="titre">Gestion de Projet</td>
+                <td id="titre">Histoir/Geographie</td>
                 <td class="text-center" id="titre"><span >11</span></td>
                 <td class="text-center" id="titre"><span>14</span></td>
               </tr>
               <tr>
-                <td>Javascripte</td>
+                <td>Math</td>
                 <td class="text-center"><span >10</span></td>
                 <td class="text-center"><span >17</span></td>
               </tr>
               <tr>
-                <td id="titre">Maquettage</td>
+                <td id="titre">SVT</td>
                 <td  class="text-center" id="titre" ><span >12</span></td>
                 <td class="text-center" id="titre"><span >13</span></td>
               </tr>
@@ -183,3 +185,4 @@
 
     <app-user-footer></app-user-footer>
     </body>
+  </div>
