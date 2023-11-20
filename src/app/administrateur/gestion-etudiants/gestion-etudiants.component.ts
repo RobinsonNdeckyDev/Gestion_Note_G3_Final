@@ -125,9 +125,9 @@ export class GestionEtudiantsComponent {
       text: "voulez-vous desactiver",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Oui!"
+      confirmButtonColor: "#DD99BB",
+      cancelButtonColor: "#F2D4CC",
+      confirmButtonText: "Oui !"
     }).then((result) => {
       if (result.isConfirmed) {
         paramApprenant.etatApprenant = 0;
@@ -145,8 +145,8 @@ export class GestionEtudiantsComponent {
       text: "voulez-vous activer",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#DD99BB",
+      cancelButtonColor: "#F2D4CC",
       confirmButtonText: "Oui!"
     }).then((result) => {
       if (result.isConfirmed) {
