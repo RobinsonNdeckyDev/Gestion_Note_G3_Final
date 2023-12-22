@@ -1,4 +1,105 @@
-<div class="container-fluid" >
+<nav class="navbar navbar-expand-lg headercontainer">
+  <div class="container px-5">
+      <a class="navbar-brand text-light" href="#">
+          <img src="../../../../assets/logo.png" alt="" style="width: 140px;">
+      </a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button> -->
+
+      <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img [src]="ApprenantConnect.imageApprenant" class="img-fluid" style="width: 4Opx; height: 40px; border-radius: 50%;"  alt="">
+              <h6>{{ApprenantConnect.prenomApprenant}} {{ApprenantConnect.nomApprenant}}</h6>
+          </a>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item text-dark" href="#">Profil</a></li>
+              <li>
+                  <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-dark" href="#">Se déconnecter</a></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<div class="row m-2 p-1">
+    <div class="col-12 col-md-3">
+        <div class="shadow">
+            <!-- <button class="btn  btnProf w-100" [ngClass]="{'fond-btn': boutonActif === 1}"
+                (click)="showComponant('gestionProfs')" (click)="boutonActif = 1">Gestion Formateurs
+            </button> -->
+        </div>
+    </div>
+    <div class="col-12 col-md-3">
+        <div class=" shadow">
+            <!-- <button class="btn  btnEtudiant w-100" [ngClass]="{'fond-btn': boutonActif === 2}"
+                (click)="showComponant('gestionEtud')" (click)="boutonActif = 2">Gestion Etudiants
+            </button> -->
+        </div>
+    </div>
+    <div class="col-12 col-md-3">
+        <div class=" shadow">
+            <!-- <button class="btn  btnProf w-100" [ngClass]="{'fond-btn': boutonActif === 3}"
+                (click)="showComponant('gestionMatieres')" (click)="boutonActif = 3">Gestion Matieres
+            </button> -->
+        </div>
+    </div>
+    <div class="col-12 col-md-3">
+        <div class=" shadow">
+            <!-- <button class="btn  btnProf w-100" [ngClass]="{'fond-btn': boutonActif === 4}"
+                (click)="showComponant('gestionClasses')" (click)="boutonActif = 4">Gestion Classes
+            </button> -->
+        </div>
+    </div>
+</div>
+<div class="tablef">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Semestre</th>
+        <th>Année Scolaire</th>
+        <th>Type de Note</th>
+        <th>Matière</th>
+        <th>Note <i class="bi bi-pencil-square"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let note of tabNotes">
+        <td>{{note.semestre}}</td>
+        <td>{{note.annee_scolaire}}</td>
+        <td>{{note.type_note}}</td>
+        <td>{{note.matiere}}</td>
+        <td>{{note.valeur}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer-admin></app-footer-admin>
+
+
+<!-- <div class="navAdmin container-fluid d-flex justify-content-end p-0">
+    <button class="btn  btnProf m-2" [ngClass]="{'fond-bleu': boutonActif === 1}" 
+    (click)="showComponant('gestionProfs')" (click)="boutonActif = 1" >Gestion Formateurs</button>
+    <button class="btn  btnEtudiant m-2" [ngClass]="{'fond-bleu': boutonActif === 2}"
+    (click)="showComponant('gestionEtud')" (click)="boutonActif = 2" >Gestion Etudiants</button>
+    <button class="btn  btnProf m-2" [ngClass]="{'fond-bleu': boutonActif === 3}"
+    (click)="showComponant('gestionMatieres')" (click)="boutonActif = 3" >Gestion Matieres</button>
+    <button class="btn  btnProf m-2" [ngClass]="{'fond-bleu': boutonActif === 4}"
+    (click)="showComponant('gestionClasses')" (click)="boutonActif = 4" >Gestion Classes</button>
+</div> -->
+
+<!-- <app-gestion-profs class="gestionProfs" id="gestionProfs"  *ngIf="currentContent === 'gestionProfs'"></app-gestion-profs>
+<app-gestion-etudiants class="gestionEtud" id="gestionEtud" *ngIf="currentContent === 'gestionEtud'"></app-gestion-etudiants>
+<app-gestion-matieres class="gestionMatieres" id="gestionMatieres" *ngIf="currentContent === 'gestionMatieres'"></app-gestion-matieres>
+<app-gestion-classes class="gestionClasses" id="gestionClasses" *ngIf="currentContent === 'gestionClasses'"></app-gestion-classes> -->
+
+
+
+<!-- <div class="container-fluid" >
 <body cz-shortcut-listen="true">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#d9b ; border: 1px solid rgb(239, 237, 237);">
         <div class="container-fluid ">
@@ -8,11 +109,10 @@
           </button>
           <div>
             <ul>
-              <li class="nav-item dropdown text-light">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(8, 85, 77);">
-                 {{ApprenantConnect.anneeScolaire |date:'YYYY'}} 
+              <li class="nav-item dropdown text-light" >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(8, 85, 77);">Année Accademique
                 </a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" *ngFor="let note of tabNotes">
                   <li><a class="dropdown-item" href="#">2020-2021</a></li>
                   <li><a class="dropdown-item" href="#">2021-2022</a></li>
                   <li><a class="dropdown-item" href="#">2022-2023</a></li>
@@ -22,15 +122,9 @@
           </div>
         </div>
       </nav>
-   
-      <!-- <div class="semestre d-flex justify-content-center "  *ngIf="showSemestre">
-        <button type="button" class="btn btn-secondary ms-10  w-100" (click)="affichesem()" >{{buttontext}}
-        </button>
-        {{Semestre1}}
-  
-        </div>
+        
         <div class="semestre d-flex justify-content-center "  *ngIf="!showSemestre">
-          <button type="button" class="btn btn-primary  w-100" (click)="affichesem()" >{{buttontext}}
+          <button type="button" class="btn btn-primary  w-100" (click)="Affichersemes()" >{{buttontext}}
           </button>
           {{Semestre1}}
           <div *ngIf="!showSemestre">
@@ -42,7 +136,7 @@
             </tbody>
           </div>
             
-          </div> -->
+          </div> 
     <main >
       <h1 class="visually-hidden"></h1>
     
@@ -52,7 +146,6 @@
         </a>
         <div class="dropdown">
               <img [src]="ApprenantConnect.imageApprenant" alt="" width="100" height="100" class="rounded-circle ms-5"><h3 class="user ms-5">{{ApprenantConnect.prenomApprenant}} {{ApprenantConnect.nomApprenant}}</h3>
-              <!-- <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">mdo</font></font></strong> -->
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
               <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Profil</font></font></a></li>
               <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">se déconnecter</font></font></a></li>
@@ -65,12 +158,10 @@
           
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
-          <!-- <li class="nav-item">
             <a href="#" class="nav-link " aria-current="page">
               <svg class="bi me-2" width="16" height="16" ><use xlink:href="#home"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
               Maison
             </font></font></a>
-          </li> -->
           <li>
             <a href="#" class="nav-link text-white">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
@@ -78,13 +169,13 @@
             </font></font></a>
           </li>
           <li>
-            <a style="cursor: pointer;" class="nav-link text-white" (click)= "Afficher()">
+            <a style="cursor: pointer;" class="nav-link text-white" (click)= "Affichersemes()">
               <svg class="bi me-2" width="16" height="16" ><use xlink:href="#table"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit; ">
               Semestre1 
             </font></font></a>
           </li>
           <li>
-            <a  style="cursor: pointer;" class="nav-link text-white"  (click)="Afficher()">
+            <a  style="cursor: pointer;" class="nav-link text-white"  (click)="Affichersemes()">
               <svg class="bi me-2" width="16" height="16" style="background-color: aqua;"><use xlink:href="#grid"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
              Semestre2
             </font></font></a>
@@ -98,86 +189,46 @@
       
       
       
-      <div [class]="tabNotes" *ngIf="showDevoir==showSemestre">
+      <div [class]="tabNotes" >
 
-        <table class="table">
-          <thead>
-            <tr>
-              <th >Matieres </th>
+        <table class="table" >
+          <thead >
+            <tr >
+              <th>Matieres </th>
               <th class="text-center">Devoir  <i class="bi bi-pencil-square"></i></th>
               <th class="text-center">Examen <i class="bi bi-pencil-square"></i></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             <tr *ngFor="let note of tabNotes">
-              <td id="titre">{{note.matiere}}</td>
+              <td id="titre" >{{note.matiere}}</td>
               <td class="text-center" id="titre"><span>{{note.valeur}}</span></td>
               <td class="text-center" id="titre"><span >{{note.valeur}}</span></td>
-            <!-- </tr>
-            <tr>
-              <td>Angular</td>
-              <td class="text-center"><span>9</span></td>
-              <td class="text-center"><span>18</span></td>
-            </tr>
-            <tr>
-              <td id="titre">Gestion de Projet</td>
-              <td class="text-center" id="titre"><span >11</span></td>
-              <td class="text-center" id="titre"><span>14</span></td>
-            </tr>
-            <tr>
-              <td>Javascripte</td>
-              <td class="text-center"><span >10</span></td>
-              <td class="text-center"><span >17</span></td>
-            </tr> -->
-            <!-- <tr>
-              <td id="titre">Maquettage</td>
-              <td  class="text-center" id="titre" ><span >12</span></td>
-              <td class="text-center" id="titre"><span >13</span></td>
-            </tr> -->
+            
+              
+            </tr> 
           </tbody>
         </table>
       </div>
 
       <div *ngIf="!showDevoir">
-        <div class="card-body ">
-          <table class="table">
+          <table class="table" >
             <thead>
               <tr>
                 <th >Matieres </th>
-                <th class="text-center">Devoir<i class="bi bi-pencil-square "></i>
+                <th class="text-center">Devoir <i class="bi bi-pencil-square "></i>
                   <th class="text-center">Examen <i class="bi bi-pencil-square"></i>
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td id="titre">Math</td>
-                <td class="text-center" id="titre"><span>16</span></td>
-                <td class="text-center" id="titre"><span >20</span></td>
-              </tr>
-              <tr>
-                <td>Français</td>
-                <td class="text-center"><span>9</span></td>
-                <td class="text-center"><span>18</span></td>
-              </tr>
-              <tr>
-                <td id="titre">Histoir/Geographie</td>
-                <td class="text-center" id="titre"><span >11</span></td>
-                <td class="text-center" id="titre"><span>14</span></td>
-              </tr>
-              <tr>
-                <td>Math</td>
-                <td class="text-center"><span >10</span></td>
-                <td class="text-center"><span >17</span></td>
-              </tr>
-              <tr>
-                <td id="titre">SVT</td>
-                <td  class="text-center" id="titre" ><span >12</span></td>
-                <td class="text-center" id="titre"><span >13</span></td>
+            <tbody >
+              <tr *ngFor="let note of tabNotes">
+                <td id="titre">{{note.matiere}}</td>
+                <td class="text-center" id="titre"><span>{{note.valeur}}</span></td>
+                <td class="text-center" id="titre"><span >{{note.valeur}} </span></td>
               </tr>
             </tbody>
           </table>
-        </div>
       </div>
     </main>
     
@@ -185,4 +236,4 @@
 
     <app-user-footer></app-user-footer>
     </body>
-  </div>
+</div> -->

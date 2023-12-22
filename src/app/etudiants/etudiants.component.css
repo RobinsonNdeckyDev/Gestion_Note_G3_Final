@@ -1,15 +1,27 @@
-main{
+nav{ background-color: #d9b;}
+/* main{
     display: flex;
-}
+} */
 #titre{
     background-color:  rgb(244, 240, 240);
 }
 table{
-    width: 292%;
-    border: 1px solid #000;
-    margin-top: 1%;
+    /* width: 292%; */
+    /* border: 1px solid #000; */
+    margin: 2%;
+    /* margin-left: 10%; */
+
+}
+th{ 
+    background-color: #d9b;
+    border: none;
+    color: white;
 }
 @media screen and (max-width: 768px){
+    *{
+        padding: 0;
+        margin: 0 auto;
+    }
     .container-fluid{
         display: grid;
         grid-template-columns: auto;
