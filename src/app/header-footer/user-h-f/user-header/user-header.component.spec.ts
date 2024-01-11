@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NgModule } from '@angular/core';
 import { UserHeaderComponent } from './user-header.component';
 
 describe('UserHeaderComponent', () => {
@@ -8,7 +8,7 @@ describe('UserHeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [UserHeaderComponent]
+      declarations: [UserHeaderComponent],
     });
     fixture = TestBed.createComponent(UserHeaderComponent);
     component = fixture.componentInstance;

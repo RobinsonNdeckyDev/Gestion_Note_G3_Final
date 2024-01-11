@@ -2,15 +2,18 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [
       RouterTestingModule,
-      FormsModule
+      FormsModule,
+      RouterModule
     ],
-    declarations: [AppComponent]
+    declarations: [AppComponent],
+    
   }));
 
   it('should create the app', () => {
@@ -19,7 +22,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Gestion_Note_G3'`, () => {
+  it(`should have as title 'Gestion_Note_G3 app is running!'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('Gestion_Note_G3');
@@ -32,3 +35,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('Gestion_Note_G3 app is running!');
   });
 });
+

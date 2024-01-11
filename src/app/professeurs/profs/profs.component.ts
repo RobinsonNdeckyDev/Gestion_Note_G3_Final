@@ -2,6 +2,7 @@
 import { Evaluations } from './../../models/evaluation';
 import { Component, NgModule, OnInit } from '@angular/core';
 import { NotesComponent } from '../notes/notes.component';
+import { GestionEvaluationComponent } from '../gestion-evaluation/gestion-evaluation.component';
 
 
 

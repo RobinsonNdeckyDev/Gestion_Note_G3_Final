@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { GestionProfsComponent } from './gestion-profs.component';
 
 describe('GestionProfsComponent', () => {
@@ -8,7 +8,8 @@ describe('GestionProfsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GestionProfsComponent]
+      declarations: [GestionProfsComponent],
+      imports: [FormsModule],
     });
     fixture = TestBed.createComponent(GestionProfsComponent);
     component = fixture.componentInstance;

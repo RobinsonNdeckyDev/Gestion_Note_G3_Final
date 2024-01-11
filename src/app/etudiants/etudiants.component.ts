@@ -7,13 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./etudiants.component.css']
 })
 export class EtudiantsComponent {
-showDevoir: boolean = true;
-showSemestre: boolean = true;
-Semestre1!: string ;
-buttontext!: string;
- Afficher(){
-  this.showDevoir=!this.showDevoir
- }
+// showDevoir: boolean = true;
+// showSemestre: boolean = true;
+// Semestre1!: string ;
+// buttontext!: string;
+// Affichersemes(){
+//   this.showDevoir=!this.showDevoir
+//  }
 
  tabClasse:any;
  tabApprenant:any;
@@ -30,29 +30,30 @@ tabNotes:any;
  
 
  ngOnInit(): void{
-  this.buttontext="Semestre1"
+  // this.buttontext="Semestre1"
 
   // Renvoie un tableau de valuers ou un tableau vide 
   this.tabClasse = JSON.parse(localStorage.getItem("Classes") || "[]");
   console.log(this.tabClasse);
 
   this.tabApprenant = JSON.parse(localStorage.getItem("Apprenants") || "[]");
-  this.tabNotes = JSON.parse(localStorage.getItem("notes") || "[]");
+  this.tabNotes = JSON.parse(localStorage.getItem("notes") || ("Apprenants") || "[]");
   console.log(this.tabApprenant);
+  this.notes = JSON.parse(localStorage.getItem("note") || "[]");
 
   // On récupère l'objet qui s'est connecté 
   this.ApprenantConnect = this.tabApprenant.find((element:any) => element.idApprenant == this.idUserConnect);
   console.log(this.ApprenantConnect);
 }
        
-   affichesem(){
-    this.showSemestre=!this.showSemestre;
-    if (this.buttontext=="Semestre1") {
-      this.buttontext="Semestre2"
-    }
-    else{
-      this.buttontext="Semestre1"
-    }
-   }
+  //  affichesem(){
+  //   this.showSemestre=!this.showSemestre;
+  //   if (this.buttontext=="Semestre1") {
+  //     this.buttontext="Semestre2"
+  //   }
+  //   else{
+  //     this.buttontext="Semestre1"
+  //   }
+  //  }
    
 }
